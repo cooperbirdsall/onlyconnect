@@ -1,16 +1,25 @@
 {
   "files": {
-    "main.css": "/onlyconnect/static/css/main.073c9b0a.css",
-    "main.js": "/onlyconnect/static/js/main.b088e8ff.js",
+    "main.css": "/onlyconnect/static/css/main.032e9aea.css",
+    "main.js": "/onlyconnect/static/js/main.a11dffde.js",
     "static/js/787.5e7703b8.chunk.js": "/onlyconnect/static/js/787.5e7703b8.chunk.js",
-    "static/media/logo.svg": "/onlyconnect/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/clown.png": "/onlyconnect/static/media/clown.06cbe13f6406b0a4ddfe.png",
+    "static/media/cowboy.png": "/onlyconnect/static/media/cowboy.ac2fa23821295089a090.png",
+    "static/media/turtle.png": "/onlyconnect/static/media/turtle.b09b44d0c56a44f77333.png",
+    "static/media/nail.png": "/onlyconnect/static/media/nail.4352530d99e668c53842.png",
+    "static/media/men.png": "/onlyconnect/static/media/men.e4b293b9846fd48e3412.png",
+    "static/media/OpenSans-Regular.ttf": "/onlyconnect/static/media/OpenSans-Regular.d7d7b8359eeb9cddfba6.ttf",
+    "static/media/OpenSans-Bold.ttf": "/onlyconnect/static/media/OpenSans-Bold.6e27168fc8a5a200a026.ttf",
+    "static/media/mouth.png": "/onlyconnect/static/media/mouth.b043302afa08c89519d5.png",
+    "static/media/x.png": "/onlyconnect/static/media/x.d01e4a8cd448524f6420.png",
+    "static/media/eye.png": "/onlyconnect/static/media/eye.4ddd570f49b0160c9f7e.png",
     "index.html": "/onlyconnect/index.html",
-    "main.073c9b0a.css.map": "/onlyconnect/static/css/main.073c9b0a.css.map",
-    "main.b088e8ff.js.map": "/onlyconnect/static/js/main.b088e8ff.js.map",
+    "main.032e9aea.css.map": "/onlyconnect/static/css/main.032e9aea.css.map",
+    "main.a11dffde.js.map": "/onlyconnect/static/js/main.a11dffde.js.map",
     "787.5e7703b8.chunk.js.map": "/onlyconnect/static/js/787.5e7703b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.b088e8ff.js"
+    "static/css/main.032e9aea.css",
+    "static/js/main.a11dffde.js"
   ]
 }
