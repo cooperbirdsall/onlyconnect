@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/onlyconnect/static/css/main.073c9b0a.css",
+    "main.js": "/onlyconnect/static/js/main.b088e8ff.js",
+    "static/js/787.5e7703b8.chunk.js": "/onlyconnect/static/js/787.5e7703b8.chunk.js",
+    "static/media/logo.svg": "/onlyconnect/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/onlyconnect/index.html",
+    "main.073c9b0a.css.map": "/onlyconnect/static/css/main.073c9b0a.css.map",
+    "main.b088e8ff.js.map": "/onlyconnect/static/js/main.b088e8ff.js.map",
+    "787.5e7703b8.chunk.js.map": "/onlyconnect/static/js/787.5e7703b8.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.073c9b0a.css",
+    "static/js/main.b088e8ff.js"
+  ]
+}
