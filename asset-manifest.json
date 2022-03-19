@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/onlyconnect/static/css/main.032e9aea.css",
-    "main.js": "/onlyconnect/static/js/main.a11dffde.js",
+    "main.css": "/onlyconnect/static/css/main.ce9b11e6.css",
+    "main.js": "/onlyconnect/static/js/main.31aeae47.js",
     "static/js/787.5e7703b8.chunk.js": "/onlyconnect/static/js/787.5e7703b8.chunk.js",
     "static/media/clown.png": "/onlyconnect/static/media/clown.06cbe13f6406b0a4ddfe.png",
     "static/media/cowboy.png": "/onlyconnect/static/media/cowboy.ac2fa23821295089a090.png",
@@ -14,12 +14,12 @@
     "static/media/x.png": "/onlyconnect/static/media/x.d01e4a8cd448524f6420.png",
     "static/media/eye.png": "/onlyconnect/static/media/eye.4ddd570f49b0160c9f7e.png",
     "index.html": "/onlyconnect/index.html",
-    "main.032e9aea.css.map": "/onlyconnect/static/css/main.032e9aea.css.map",
-    "main.a11dffde.js.map": "/onlyconnect/static/js/main.a11dffde.js.map",
+    "main.ce9b11e6.css.map": "/onlyconnect/static/css/main.ce9b11e6.css.map",
+    "main.31aeae47.js.map": "/onlyconnect/static/js/main.31aeae47.js.map",
     "787.5e7703b8.chunk.js.map": "/onlyconnect/static/js/787.5e7703b8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.032e9aea.css",
-    "static/js/main.a11dffde.js"
+    "static/css/main.ce9b11e6.css",
+    "static/js/main.31aeae47.js"
   ]
 }
