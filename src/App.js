@@ -1,10 +1,10 @@
 import './App.css';
-import SelectScreen from './SelectScreen.js';
+import MainScreen from './MainScreen.js';
 
 function App() {
   return (
     <div className="App">
-      <SelectScreen />
+      <MainScreen />
     </div>
   );
 }

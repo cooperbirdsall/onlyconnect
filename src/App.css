@@ -13,7 +13,7 @@ body {
 }
 
 h1 {
-  font-family: OpenSansBold;
+  font-family: OpenSansBold, "Helvetica", sans-serif;
   font-size: 75px;
   margin-top: 10vh;
   margin-bottom: 0px;
@@ -21,7 +21,7 @@ h1 {
 }
 
 h2 {
-  font-family: OpenSansRegular;
+  font-family: OpenSansRegular, "Helvetica", sans-serif;
   margin-bottom: 20px;
   color: #9E9E9E;
 }
@@ -126,7 +126,7 @@ h2 {
 
 .button-label {
   font-size: 30px;
-  font-family: OpenSansRegular;
+  font-family: OpenSansRegular, "Helvetica", sans-serif;
   color: white;
   margin-left: 15px;
 }
