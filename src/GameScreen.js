@@ -1,8 +1,8 @@
 import SelectScreen from './SelectScreen.js';
 
-function GameScreen() {
+function GameScreen(props) {
   return (
-    <SelectScreen />
+    <SelectScreen data={props.data} round={0}/>
   );
 }
 

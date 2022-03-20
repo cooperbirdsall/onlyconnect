@@ -1,8 +1,9 @@
 import GameScreen from './GameScreen.js';
+import { data } from './Assets/Games/game2.js';
 
 function MainScreen() {
   return (
-    <GameScreen />
+    <GameScreen data={data}/>
   );
 }
 

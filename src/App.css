@@ -81,6 +81,13 @@ h2 {
   height: auto;
 }
 
+#question {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 #all-buttons {
   display: flex;
   flex-direction: row;
@@ -193,4 +200,62 @@ h2 {
 
 #reveal-button:hover + #reveal-hide {
   display: block;
+}
+
+#info-timer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 60px;
+}
+
+#answer {
+  text-shadow:
+    -2px -2px #4F5D75,
+    -2px 2px #4F5D75,
+    2px -2px #4F5D75,
+    2px 2px #4F5D75;
+  background-size: 1px 1em;
+  box-shadow: inset 0 -10px #EF8354;
+  display: inline;
+  margin-bottom: 20px;
+}
+
+#clues {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  margin-bottom: 0px;
+}
+
+.clue {
+  /* dimensions are calculated to account for the padding */
+  width: calc(20vw - 40px);
+  height: calc(13.3vw - 40px);
+  padding: 20px;
+  min-width: 300px;
+  min-height: 200px;
+  border-radius: 50px;
+  margin: 30px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  background-color: #E5E5E5;
+  font-family: OpenSansRegular;
+  font-size: 40px;
+  text-align: center;
+}
+
+#timer-bar {
+  background-color: #EF8354;
+  height: 50px;
+  width: 89vw;
+  border-radius: 50px;
 }

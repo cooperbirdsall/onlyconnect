@@ -29,18 +29,16 @@ function QuestionTile(props) {
   Question.
 **/
 function SelectScreen(props) {
-  //second round (from props?) should just multiply by 2
-  //otherwise maybe 2nd round handled here not via props
   const [currentQuestion, setCurrentQuestion] = useState(-1);
   const [visitedQuestions, setVisitedQuestions] = useState([true, true, true, true, true, true]);
   const updateVisitedQuestions = (number) => {
     let tempArray = visitedQuestions;
     //if untoggling the Tile (gray -> white)
-    if (!visitedQuestions[number - 1]) {
-      tempArray[number - 1] = true;
+    if (!visitedQuestions[number]) {
+      tempArray[number] = true;
       setCurrentQuestion(-1);
     } else { //Tile was selected (white -> gray)
-      tempArray[number - 1] = false;
+      tempArray[number] = false;
       setCurrentQuestion(number);
     }
     setVisitedQuestions(tempArray);
@@ -51,24 +49,27 @@ function SelectScreen(props) {
       <div id="select-screen">
         <h1>Select a tile</h1>
         <div id="tile-grid">
-          <QuestionTile emoji={turtle} number={1} visited={visitedQuestions[0]}
+          <QuestionTile emoji={turtle} number={0} visited={visitedQuestions[0]}
             alt="turtle" onChosen={updateVisitedQuestions} />
-          <QuestionTile emoji={mouth} number={2} visited={visitedQuestions[1]}
+          <QuestionTile emoji={mouth} number={1} visited={visitedQuestions[1]}
             alt="mouth" onChosen={updateVisitedQuestions}/>
-          <QuestionTile emoji={cowboy} number={3} visited={visitedQuestions[2]}
+          <QuestionTile emoji={cowboy} number={2} visited={visitedQuestions[2]}
             alt="cowboy" onChosen={updateVisitedQuestions}/>
-          <QuestionTile emoji={men} number={4} visited={visitedQuestions[3]}
+          <QuestionTile emoji={men} number={3} visited={visitedQuestions[3]}
             alt="men" onChosen={updateVisitedQuestions}/>
-          <QuestionTile emoji={clown} number={5} visited={visitedQuestions[4]}
+          <QuestionTile emoji={clown} number={4} visited={visitedQuestions[4]}
             alt="clown" onChosen={updateVisitedQuestions}/>
-          <QuestionTile emoji={nail} number={6} visited={visitedQuestions[5]}
+          <QuestionTile emoji={nail} number={5} visited={visitedQuestions[5]}
             alt="nail" onChosen={updateVisitedQuestions}/>
         </div>
       </div>
     );
   } else {
     return(
-      <Question back={setCurrentQuestion}/>
+      <Question back={setCurrentQuestion}
+        clue={props.data[props.round][currentQuestion].clue}
+        answer={props.data[props.round][currentQuestion].answer}
+        round={props.round}/>
     );
   }
 

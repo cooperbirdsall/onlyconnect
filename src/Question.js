@@ -4,6 +4,18 @@ import nextButton from "./Assets/Icons/next.png";
 import eyeButton from "./Assets/Icons/eye.png";
 
 /**
+  Rounded rectangle at the bottom of the screen that shrinks as the clue
+  progresses.
+**/
+function TimerBar(props) {
+  //will probably have to make timer-bar absolute positioned
+  const [timeRemaining, setTimeRemaining] = useState(1000);
+  return (
+    <div id="timer-bar"></div>
+  );
+}
+
+/**
   Question component displays the screen with the actual Only Connect question.
 **/
 function Question(props) {
@@ -46,6 +58,24 @@ function Question(props) {
             <p id="reveal-hide" className="button-label side-label">Reveal</p>
           </div>
         </div>
+      </div>
+      <div id="info-timer-container">
+        <h1 id="answer">{props.answer}</h1>
+        <div id="clues">
+          <div className="clue">
+            <p>{props.clue[0]}</p>
+          </div>
+          <div className="clue">
+            <p>{props.clue[1]}</p>
+          </div>
+          <div className="clue">
+            <p>{props.clue[2]}</p>
+          </div>
+          <div className="clue">
+            <p>{props.clue[3]}</p>
+          </div>
+        </div>
+        <TimerBar />
       </div>
     </div>
   );
