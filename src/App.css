@@ -10,12 +10,13 @@
 
 body {
   background-color: #4F5D75;
+  overflow-x: hidden;
 }
 
 h1 {
   font-family: OpenSansBold, "Helvetica", sans-serif;
-  font-size: 75px;
-  margin-top: 10vh;
+  font-size: 65px;
+  margin-top: 15vh;
   margin-bottom: 0px;
   color: #E5E5E5;
 }
@@ -36,8 +37,6 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  width: 100%;
 }
 
 #tile-grid {
@@ -47,15 +46,16 @@ h2 {
   flex-wrap: wrap;
   align-items: center;
   padding: 0px 100px 100px 100px;
+  animation: show-up 0.25s;
 }
 
 .question-tile {
-  width: 20vw;
-  height: 13.3vw;
+  width: 18vw;
+  height: 12vw;
   min-width: 300px;
   min-height: 200px;
   border-radius: 50px;
-  margin: 30px;
+  margin: 20px;
 
   display: flex;
   flex-direction: row;
@@ -85,14 +85,29 @@ h2 {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-end;
+  animation: show-up 0.25s;
+  width: 100%;
 }
 
-#all-buttons {
+@keyframes show-up {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+#top-menu {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
+
+  position: absolute;
+  top: 0px;
 }
 
 .button {
@@ -100,6 +115,7 @@ h2 {
   width: 75px;
   border-radius: 50%;
   background-color: #9E9E9E;
+  border: 1px solid #4F5D75;
 
   display: flex;
   flex-direction: row;
@@ -124,6 +140,8 @@ h2 {
 
 #side-buttons {
   margin-top: 30px;
+  /* position: absolute;
+  right: 0px; */
 }
 
 .side-container {
@@ -178,6 +196,17 @@ h2 {
   width: 60%;
 }
 
+#pause-image {
+  height: 50%;
+  width: 55%;
+}
+
+#play-image {
+  height: 50%;
+  width: 50%;
+  margin-left: 6px;
+}
+
 #next-hide {
   display: none;
 }
@@ -208,7 +237,7 @@ h2 {
   justify-content: center;
   align-items: center;
 
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 
 #answer {
@@ -221,6 +250,18 @@ h2 {
   box-shadow: inset 0 -10px #EF8354;
   display: inline;
   margin-bottom: 20px;
+
+  font-size: 4vw;
+}
+
+.fade-in {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.fade-out {
+  opacity: 0;
+  transition: opacity 400ms;
 }
 
 #clues {
@@ -228,19 +269,17 @@ h2 {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  flex-wrap: wrap;
 
   margin-bottom: 0px;
 }
 
 .clue {
-  /* dimensions are calculated to account for the padding */
-  width: calc(20vw - 40px);
-  height: calc(13.3vw - 40px);
-  padding: 20px;
-  min-width: 300px;
-  min-height: 200px;
+  width: 20vw;
+  height: 13.33vw;
+  padding: 10px;
   border-radius: 50px;
-  margin: 30px;
+  margin: 15px;
 
   display: flex;
   flex-direction: row;
@@ -249,13 +288,56 @@ h2 {
 
   background-color: #E5E5E5;
   font-family: OpenSansRegular;
-  font-size: 40px;
+  font-size: 2vw;
   text-align: center;
+
+  animation: show-clue 0.25s;
+  box-shadow: 0px 10px #9E9E9E;
+}
+
+@keyframes show-clue {
+  from {
+    background-color: #9E9E9E;
+    color: #9E9E9E;
+  }
+  to {
+    background-color: #E5E5E5;
+    color: black;
+  }
+}
+
+.clue-hidden {
+  background-color: #9E9E9E;
+  font-size: 0px;
+
+  width: 20vw;
+  height: 13.33vw;
+  padding: 10px;
+  border-radius: 50px;
+  margin: 15px;
+
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  font-family: OpenSansRegular;
+  text-align: center;
+
+  box-shadow: 0px 10px #9E9E9E;
 }
 
 #timer-bar {
   background-color: #EF8354;
   height: 50px;
-  width: 89vw;
+  width: 91vw;
   border-radius: 50px;
+  margin-top: 30px;
+}
+
+#timer-container {
+  display: flex;
+  flex-direction: row;;
+  justify-content: flex-end;
+  width: 91%;
 }

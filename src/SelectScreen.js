@@ -67,7 +67,7 @@ function SelectScreen(props) {
   } else {
     return(
       <Question back={setCurrentQuestion}
-        clue={props.data[props.round][currentQuestion].clue}
+        clues={props.data[props.round][currentQuestion].clue}
         answer={props.data[props.round][currentQuestion].answer}
         round={props.round}/>
     );

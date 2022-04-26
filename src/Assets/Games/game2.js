@@ -13,10 +13,10 @@ export const data = [
     {
       "type": "text",
       "clue": [
-        "Maldives (116 sq.mi)",
-        "Suriname (63,252 sq.mi)",
-        "Seychelles (176 sq.mi)",
-        "Vatican City (0.17 sq.mi)"
+        "Maldives (116 sq.mi)",
+        "Suriname (63,252 sq.mi)",
+        "Seychelles (176 sq.mi)",
+        "Vatican City (0.17 sq.mi)"
       ],
       "answer": "Smallest Countries by Continent"
     },
