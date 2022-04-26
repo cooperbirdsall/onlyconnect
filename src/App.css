@@ -10,7 +10,6 @@
 
 body {
   background-color: #4F5D75;
-  overflow-x: hidden;
 }
 
 h1 {
@@ -37,6 +36,7 @@ h2 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 #tile-grid {
