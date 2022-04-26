@@ -112,7 +112,7 @@ function Question(props) {
         </div>
       </div>
       <div id="info-timer-container">
-        <h1 className={revealed ? "fade-in" : "fade-out"} id="answer">{revealed ? timerWidth : ""}</h1>
+        <h1 className={revealed ? "fade-in" : "fade-out"} id="answer">{revealed ? props.answer : ""}</h1>
         <div onClick={nextClue} id="clues">
           <div className="clue">
             <p>{props.clues[0]}</p>

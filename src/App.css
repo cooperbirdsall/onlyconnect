@@ -50,8 +50,8 @@ h2 {
 }
 
 .question-tile {
-  width: 18vw;
-  height: 12vw;
+  width: 19vw;
+  height: 12.66vw;
   min-width: 300px;
   min-height: 200px;
   border-radius: 50px;
@@ -310,8 +310,8 @@ h2 {
   background-color: #9E9E9E;
   font-size: 0px;
 
-  width: 18.5vw;
-  height: 12.33vw;
+  width: 19vw;
+  height: 12.66vw;
   padding: 10px 20px 10px 20px;
   border-radius: 50px;
   margin: 15px;
