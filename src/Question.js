@@ -14,14 +14,35 @@ function Question(props) {
   const [revealed, setRevealed] = useState(false);
   const [onClue, setClue] = useState(0);
   const [timerWidth, setTimerWidth] = useState(91);
+  const [timerColor, setTimerColor] = useState("#EF8354");
 
+  /*
+    Timer functionality
+  */
   useEffect(() => {
     const interval = setInterval(() => {
       if (timerWidth > 0 && !paused) {
-        setTimerWidth(timerWidth - 0.05);
+        setTimerWidth(timerWidth - 0.0125);
+        if (timerColor !== "#EF8354") {
+          setTimerColor("#EF8354");
+        }
+      } else if (timerWidth <= 0 && !paused) {
+        if (timerColor !== "#4F5D75") {
+          setTimerColor("#4F5D75");
+          setPaused(true);
+        }
       }
     }, 10);
     return () => clearInterval(interval);
+  });
+
+  //Listen for KeyPress
+  useEffect(() => {
+    window.addEventListener('keydown', handleKeyPress);
+    //Clean up
+    return () => {
+      window.removeEventListener('keydown', handleKeyPress);
+    };
   });
 
   function pause() {
@@ -38,6 +59,14 @@ function Question(props) {
   function nextClue() {
     if (onClue < 3) {
       setClue(onClue + 1);
+    }
+  }
+
+  function handleKeyPress(event) {
+    if (event.keyCode === 32) {
+      nextClue();
+    } else if (event.keyCode === 13) {
+      reveal();
     }
   }
 
@@ -72,7 +101,7 @@ function Question(props) {
               <img src={paused ? playButton : pauseButton} alt="pause and play button"
                 id={paused ? "play-image" : "pause-image"}/>
             </div>
-            <p id="pause-hide" className="button-label side-label">{paused ? "Resume" : "Pause"}</p>
+            <p id="pause-hide" className="button-label side-label">{paused ? "Play" : "Pause"}</p>
           </div>
           <div className="button-container side-container">
             <div onClick={reveal} id="reveal-button" className="button side-button">
@@ -83,8 +112,8 @@ function Question(props) {
         </div>
       </div>
       <div id="info-timer-container">
-        <h1 className={revealed ? "fade-in" : "fade-out"}id="answer">{revealed ? props.answer : ""}</h1>
-        <div id="clues">
+        <h1 className={revealed ? "fade-in" : "fade-out"} id="answer">{revealed ? timerWidth : ""}</h1>
+        <div onClick={nextClue} id="clues">
           <div className="clue">
             <p>{props.clues[0]}</p>
           </div>
@@ -99,7 +128,7 @@ function Question(props) {
           </div>
         </div>
         <div id="timer-container">
-          <div style={{ width: timerWidth + "vw" }}id="timer-bar"></div>
+          <div style={{ width: timerWidth + "vw", backgroundColor: timerColor}}id="timer-bar"></div>
         </div>
       </div>
     </div>
