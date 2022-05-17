@@ -13,6 +13,7 @@ function Question(props) {
   const [paused, setPaused] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [onClue, setClue] = useState(0);
+  //to make sure the timer disappears when it concludes
   const [timerWidth, setTimerWidth] = useState(91);
   const [timerColor, setTimerColor] = useState("#EF8354");
 
