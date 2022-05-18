@@ -4,7 +4,8 @@ import cowboy from './Assets/Emoji/cowboy.png';
 import men from './Assets/Emoji/men.png';
 import clown from './Assets/Emoji/clown.png';
 import nail from './Assets/Emoji/nail.png';
-import React, { useState } from 'react';
+import xButton from "./Assets/Icons/x.png";
+import React, { useState, useEffect } from 'react';
 import Question from './Question.js';
 
 /**
@@ -43,10 +44,28 @@ function SelectScreen(props) {
     }
     setVisitedQuestions(tempArray);
   };
+  const [backPressed, setBackPressed] = useState(false);
+
+  /**
+    Returns the user to the GameScreen when the back button is pressed
+  **/
+  useEffect(() => {
+    if (backPressed) {
+      props.back(-1);
+    }
+  }, [backPressed, props])
 
   if (currentQuestion < 0) {
     return(
       <div id="select-screen">
+        <div id="top-menu">
+          <div className="button-container back-container">
+            <div id="back-button" className="button" onClick={() => { setBackPressed(true); }}>
+              <img src={xButton} alt="back button" id="back-image"/>
+            </div>
+            <p id="back-hide" className="button-label">Back</p>
+          </div>
+        </div>
         <h1>Select a tile</h1>
         <div id="tile-grid">
           <QuestionTile emoji={turtle} number={0} visited={visitedQuestions[0]}
@@ -69,7 +88,7 @@ function SelectScreen(props) {
       <Question back={setCurrentQuestion}
         clues={props.data[props.round][currentQuestion].clue}
         answer={props.data[props.round][currentQuestion].answer}
-        round={props.round}/>
+        round={props.round} type={props.data[props.round][currentQuestion].type}/>
     );
   }
 

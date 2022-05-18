@@ -1,4 +1,5 @@
 import './App.css';
+import './MenuScreens.css';
 import MainScreen from './MainScreen.js';
 
 function App() {

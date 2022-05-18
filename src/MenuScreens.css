@@ -1,0 +1,22 @@
+#game-screen {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+#round-tile-grid {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: show-up 0.25s;
+  width: 60%;
+}
+
+.round-tile-label {
+  font-family: OpenSansRegular, "Helvetica", sans-serif;
+  font-size: 25px;
+}

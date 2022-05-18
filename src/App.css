@@ -70,7 +70,9 @@ h2 {
 
 .toggled-tile {
   background-color: #9E9E9E;
+  font-size: 0px;
 }
+
 .question-tile:hover {
   background-color: #9E9E9E;
   cursor: pointer;
@@ -333,6 +335,9 @@ h2 {
 
 
 @media only screen and (max-width: 700px) {
+  #question {
+    justify-content: center;
+  }
   #info-timer-container {
     height: 100%;
     margin-bottom: 60px;
@@ -381,6 +386,12 @@ h2 {
   #reveal-button:hover + #reveal-hide {
     display: none;
   }
+  #timer-bar {
+    height: 25px !important;
+  }
+  .question-tile:hover {
+    background-color: #E5E5E5;
+  }
 }
 
 #timer-bar {
@@ -399,4 +410,30 @@ h2 {
   flex-direction: row;;
   justify-content: flex-end;
   width: 91%;
+}
+
+.clue-image {
+  width: 120%;
+  height: 120%;
+  border-radius: 40px;
+}
+
+.clue-image-container {
+  padding: 0;
+  box-shadow: none;
+  margin-bottom: 30px;
+}
+
+.clue-image-container:first-child {
+  margin-top: 20px;
+}
+
+.question-mark {
+  font-size: 50px;
+  color: #E5E5E5;
+}
+
+.round-two-last-clue {
+  background-color: #4F5D75;
+  box-shadow: none;
 }

@@ -13,6 +13,21 @@ function Question(props) {
   const [paused, setPaused] = useState(false);
   const [revealed, setRevealed] = useState(false);
   const [onClue, setClue] = useState(0);
+  const [lastClueRoundTwo, setLastClue] = useState("?");
+  const [lastClueClass, setLastClueClass] = useState(() => {
+    if (props.round !== 1) {
+      return "";
+    } else {
+      return " round-two-last-clue";
+    }
+  });
+  const [lastClueContentClass, setLastClueContentClass] = useState(() => {
+    if (props.round !== 1) {
+      return "";
+    } else {
+      return "question-mark";
+    }
+  });
   //to make sure the timer disappears when it concludes
   const [timerWidth, setTimerWidth] = useState(91);
   const [timerColor, setTimerColor] = useState("#EF8354");
@@ -55,19 +70,33 @@ function Question(props) {
 
   function reveal() {
     setRevealed(!revealed);
+    if (props.round === 1) {
+      setClue(3);
+      setLastClueClass("");
+      setLastClue(props.clues[3]);
+      setLastClueContentClass("");
+    }
   }
 
   function nextClue() {
-    if (onClue < 3) {
-      setClue(onClue + 1);
+    if (props.round < 1) {
+      if (onClue < 3) {
+        setClue(onClue + 1);
+      }
+    } else {
+      if (onClue < 2) {
+        setClue(onClue + 1);
+      }
     }
   }
 
   function handleKeyPress(event) {
     if (event.keyCode === 32) {
       nextClue();
-    } else if (event.keyCode === 13) {
+    } else if (event.keyCode === 13 || event.keyCode === 82) {
       reveal();
+    } else if (event.keyCode === 80) {
+      pause();
     }
   }
 
@@ -79,6 +108,55 @@ function Question(props) {
       props.back(-1);
     }
   }, [backPressed, props])
+
+  let clueFormat;
+  if (props.type === "pictures") {
+    clueFormat =
+    <div onClick={nextClue} id="clues">
+      <div className="clue clue-image-container">
+        <img alt="" className="clue-image" src={props.clues[0]}/>
+      </div>
+      <div className={onClue > 0 ? "clue clue-image-container" : "clue-hidden clue-image-container"}>
+        {onClue > 0 &&
+          <img alt="" className="clue-image" src={props.clues[1]}/>
+        }
+      </div>
+      <div className={onClue > 1 ? "clue clue-image-container" : "clue-hidden clue-image-container"}>
+        {onClue > 1 &&
+          <img alt="" className="clue-image" src={props.clues[2]}/>
+        }
+      </div>
+      <div className={onClue > 2 ? "clue clue-image-container"+lastClueClass : "clue-hidden clue-image-container"+lastClueClass}>
+        {onClue > 2 && props.round !== 1 &&
+          <img alt="" className="clue-image" src={props.clues[3]}/>
+        }
+        {onClue > 2 && props.round === 1 && revealed &&
+          <img alt="" className="clue-image" src={props.clues[3]}/>
+        }
+        { props.round === 1 && !revealed &&
+          <p className="question-mark">?</p>
+        }
+      </div>
+    </div>;
+  } else {
+    clueFormat =
+    <div onClick={nextClue} id="clues">
+      <div className="clue">
+        <p>{props.clues[0]}</p>
+      </div>
+      <div className={onClue > 0 ? "clue" : "clue-hidden"}>
+        <p>{props.clues[1]}</p>
+      </div>
+      <div className={onClue > 1 ? "clue" : "clue-hidden"}>
+        <p>{props.clues[2]}</p>
+      </div>
+      <div className={onClue > 2 ? "clue"+lastClueClass : "clue-hidden"+lastClueClass}>
+        <p className={props.round === 0 ? "" : lastClueContentClass}>
+          {props.round === 0 ? props.clues[3] : lastClueRoundTwo}
+        </p>
+      </div>
+    </div>;
+  }
 
   return(
     <div id="question">
@@ -114,20 +192,7 @@ function Question(props) {
       </div>
       <div id="info-timer-container">
         <h1 className={revealed ? "fade-in" : "fade-out"} id="answer">{revealed ? props.answer : ""}</h1>
-        <div onClick={nextClue} id="clues">
-          <div className="clue">
-            <p>{props.clues[0]}</p>
-          </div>
-          <div className={onClue > 0 ? "clue" : "clue-hidden"}>
-            <p>{props.clues[1]}</p>
-          </div>
-          <div className={onClue > 1 ? "clue" : "clue-hidden"}>
-            <p>{props.clues[2]}</p>
-          </div>
-          <div className={onClue > 2 ? "clue" : "clue-hidden"}>
-            <p>{props.clues[3]}</p>
-          </div>
-        </div>
+        {clueFormat}
         <div id="timer-container">
           <div style={{ width: timerWidth + "vw", backgroundColor: timerColor}}id="timer-bar"></div>
         </div>
