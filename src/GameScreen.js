@@ -43,10 +43,7 @@ function GameScreen(props) {
             round={0} onChosen={updateVisitedRounds} text="1: Connections"/>
           <RoundTile number={1} visited={visitedRounds[1]}
             round={1} onChosen={updateVisitedRounds} text="2: Sequences"/>
-          <RoundTile number={2} visited={visitedRounds[2]}
-            round={2} onChosen={updateVisitedRounds} text="3: Connecting Wall"/>
-          <RoundTile number={3} visited={visitedRounds[3]}
-            round={3} onChosen={updateVisitedRounds} text="4: Missing Vowels"/>
+            <p style={{color: "white"}}>Rounds 3 & 4 coming soon!</p>
         </div>
       </div>
     );
