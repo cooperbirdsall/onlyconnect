@@ -7,22 +7,7 @@ import nail from './Assets/Emoji/nail.png';
 import xButton from "./Assets/Icons/x.png";
 import React, { useState, useEffect } from 'react';
 import Question from './Question.js';
-
-/**
-  One of the individual tiles with an icon. Will toggle itself when pressed.
-**/
-function QuestionTile(props) {
-  const [toggled, toggle] = useState(props.visited);
-  return(
-    <div className={toggled ? "question-tile active-tile" : "question-tile toggled-tile"}
-      onClick={() => {
-        toggle(!toggled);
-        props.onChosen(props.number);
-      }}>
-      <img src={props.emoji} className="tile-emoji" alt={props.alt} hidden={!toggled}/>
-    </div>
-  );
-}
+import QuestionTile from './QuestionTile.js';
 
 /**
   The main screen of the round. Will display the tile grid until the user selects

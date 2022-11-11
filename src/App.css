@@ -437,3 +437,34 @@ h2 {
   background-color: #4F5D75;
   box-shadow: none;
 }
+
+.wall-tile {
+  width: 60%;
+  height: 8vw;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 10px;
+
+  background-color: #E5E5E5;
+  font-family: OpenSansRegular;
+  font-size: 2vw;
+  text-align: center;
+
+  box-shadow: 0px 3px #9E9E9E;
+}
+
+#wall-tile-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 70%;
+}
+
+.wall-tile-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

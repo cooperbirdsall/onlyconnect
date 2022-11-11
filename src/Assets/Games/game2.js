@@ -122,5 +122,83 @@ export const data = [
       ],
       "answer": "L, G, B, T"
     }
+  ],
+  [ //Round Three: Connecting Wall
+    [ //First Wall
+      {
+        "clues": [
+          "Vy",
+          "Crypt",
+          "Thrall",
+          "Vision"
+        ],
+        "answer": "En___"
+      },
+      {
+        "clues": [
+          "Ibis",
+          "Hawk",
+          "Wren",
+          "Tern"
+        ],
+        "answer": "Birds"
+      },
+      {
+        "clues": [
+          "Falcon",
+          "Drax",
+          "Gamora",
+          "Thanos"
+        ],
+        "answer": "MCU Characters"
+      },
+      {
+        "clues": [
+          "Thor",
+          "Odin",
+          "Tyr",
+          "Sol"
+        ],
+        "answer": "Norse Gods"
+      }
+    ],
+    [ //Second Wall
+      {
+        "clues": [
+          "TI",
+          "NWA",
+          "DMX",
+          "MIA"
+        ],
+        "answer": "Rap Artists"
+      },
+      {
+        "clues": [
+          "MASH",
+          "SWAT",
+          "RED",
+          "WALLE"
+        ],
+        "answer": "Movies"
+      },
+      {
+        "clues": [
+          "POV",
+          "ET",
+          "OMG",
+          "WAP"
+        ],
+        "answer": "Songs"
+      },
+      {
+        "clues": [
+          "IED",
+          "MRE",
+          "AWOL",
+          "SOS"
+        ],
+        "answer": "Military Acronyms"
+      }
+    ]
   ]
 ]

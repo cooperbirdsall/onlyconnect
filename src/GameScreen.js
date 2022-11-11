@@ -1,4 +1,5 @@
 import SelectScreen from './SelectScreen.js';
+import ConnectingWallMenu from './ConnectingWallMenu.js';
 import React, { useState } from 'react';
 
 function RoundTile(props) {
@@ -43,7 +44,8 @@ function GameScreen(props) {
             round={0} onChosen={updateVisitedRounds} text="1: Connections"/>
           <RoundTile number={1} visited={visitedRounds[1]}
             round={1} onChosen={updateVisitedRounds} text="2: Sequences"/>
-            <p style={{color: "white"}}>Rounds 3 & 4 coming soon!</p>
+          <RoundTile number={2} visited={visitedRounds[2]}
+            round={2} onChosen={updateVisitedRounds} text="3: Connecting Wall"/>
         </div>
       </div>
     );
@@ -53,7 +55,9 @@ function GameScreen(props) {
         <SelectScreen round={currentRound} data={props.data} back={setCurrentRound}/>
       );
     } else if (currentRound < 3) {
-
+       return (
+        <ConnectingWallMenu data={props.data} back={setCurrentRound}/>
+       );
     } else {
 
     }
