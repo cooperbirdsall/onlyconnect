@@ -4,10 +4,40 @@ import xButton from "./Assets/Icons/x.png";
 function Wall(props) {
   const [backPressed, setBackPressed] = useState(false);
   const [selection, setSelection] = useState([]);
-  const [currentColor, setCurrentColor] = useState("green");
+  const [currentColor, setCurrentColor] = useState("rgb(63, 137, 235)");
+  //32	69	118	(blue) 42, 91, 156,,, 63, 137, 235
+  //72	137	114	(green)
+  //88	20	61	(burgundy)
+  //58	129	142	(teal)
 
-  function tileSelected(newState) {
+  /**
+    Called by a WallTile when it is clicked to update the selection
+    Then, check selection and evaluate
+      newState:     true if selected, false if deselected
+      text:         the clue itself
+      groupNumber:  answer group the clue belongs to
+  **/
+  function tileSelected(newState, text, groupNumber) {
+    const newSelection = selection;
+    if (newState) {
+      newSelection.push([text, groupNumber]);
+      setSelection(newSelection);
+      if (selection.length === 4) {
+        if (selection[0][1] === selection[1][1] &&
+          selection[0][1] === selection[2][1] &&
+          selection[0][1] === selection[3][1]) {
+            console.log("correct");
+        } else {
 
+        }
+      }
+    } else {
+      const index = newSelection.indexOf([text, groupNumber]);
+      if (index > -1) {
+        newSelection.splice(index, 1);
+        setSelection(newSelection);
+      }
+    }
   }
 
   /**
@@ -17,14 +47,14 @@ function Wall(props) {
     if (backPressed) {
       props.back(-1);
     }
-  }, [backPressed, props])
+  }, [backPressed, props]);
 
   let tiles = [];
   props.groups.forEach((group, groupNumber) => {
     group.clues.forEach((clue) => {
       tiles.push(
-        <WallTile text={clue}
-          groupNumber={groupNumber} color={currentColor} onSelected={tileSelected()}/>
+        <WallTile text={clue} key={clue}
+          groupNumber={groupNumber} color={currentColor} onSelected={tileSelected}/>
       );
     });
   });
@@ -63,16 +93,11 @@ function WallTile(props) {
   const [selected, toggle] = useState(false);
   return(
     <div className="wall-tile"
+      style={{backgroundColor: selected ? props.color : "#E5E5E5"}}
       onClick={() => {
-        if (selected) {
-          //turn background to that of the props.currentColor
-          //add props.text & groupNumber to setSelection with some props function
-          //toggle(!toggle)
-        } else {
-          //turn background back to default
-          //remove props.text from setSelection
-          //toggle(!toggle)
-        }
+        toggle(!selected);
+        console.log("selected", props.text, !selected);
+        props.onSelected(!selected, props.text, props.groupNumber);
       }}>
       <p>{props.text}</p>
     </div>

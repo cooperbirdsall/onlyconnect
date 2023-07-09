@@ -42,7 +42,7 @@ function ConnectingWallMenu(props) {
             <p id="back-hide" className="button-label">Back</p>
           </div>
         </div>
-        <h1>Select a tile</h1>
+        <h1>Select a wall</h1>
         <div id="tile-grid">
           <QuestionTile emoji={beer} number={0} visited={visitedQuestions[0]}
             alt="turtle" onChosen={updateVisitedQuestions} />

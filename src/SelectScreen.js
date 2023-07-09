@@ -31,6 +31,16 @@ function SelectScreen(props) {
   };
   const [backPressed, setBackPressed] = useState(false);
 
+  useEffect(() => {
+    props.data[props.round].forEach((question) => {
+      if (question.type === "pictures") {
+        for (let i = 0; i < 4; i++) {
+          new Image().src = question.clue[i];
+        }
+      }
+    });
+  }, [props]);
+
   /**
     Returns the user to the GameScreen when the back button is pressed
   **/
